@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     id = String(id).replace(/\.m3u8$/i, '');
 
     // Base Xtream URL (replace with your own if different)
-    const baseXtream = 'http://opplex.tv:8080/live/Jamal3m/Lhr@3m';
+    const baseXtream = 'http://ktv.im:8080/live/120820243509/45092025457';
     const sourceUrl = `${baseXtream}/${id}.m3u8`;
 
     // Fetch playlist, follow redirects
