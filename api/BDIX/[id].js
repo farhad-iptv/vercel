@@ -15,13 +15,18 @@ export default async function handler(req, res) {
     const sourceUrl = `${baseXtream}/${id}.m3u8`;
 
     // Fetch playlist, follow redirects
-    const upstreamResp = await fetch(sourceUrl, {
-      redirect: 'follow',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible)',
-        'Referer': 'http://opplex.tv/' // adjust if required
-      }
-    });
+  const upstreamResp = await fetch(sourceUrl, {
+  redirect: 'follow',
+  headers: {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Referer": "http://opplex.tv/",
+    "Origin": "http://opplex.tv",
+    "Accept": "*/*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Connection": "keep-alive"
+  }
+});
+
 
     if (!upstreamResp.ok) {
       return res
