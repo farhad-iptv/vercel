@@ -81,7 +81,7 @@ export default async function handler(req, res) {
     const finalPlaylist = lines.join("\n");
 
     // Send result
-    res.setHeader("Content-Type", "application/vnd.apple.mpegurl");
+   
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     return res.status(200).send(finalPlaylist);
 
